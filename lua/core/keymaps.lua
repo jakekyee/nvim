@@ -31,7 +31,6 @@ end)
 -- =========================
 -- SSHFS
 -- =========================
-map("n", "<leader>ss", ":RemoteSSHFSConnect<CR>", { silent = true })
 
 -- =========================
 -- Ctrl key GUI behavior
@@ -114,11 +113,9 @@ map("n", "<C-v>", '"+p')
 map("i", "<C-v>", '<C-r>+')
 map("n", "<C-a>", "ggVG")
 
-map("n", "<leader>ss", ":SSHFSConnect<CR>")
-map("n", "<leader>sd", ":SSHFSDisconnect<CR>")
-
-map("n", "<leader>aa", ":SSHFSConnect<CR>")
-map("n", "<leader>sd", ":SSHFSDisconnect<CR>")
+map("n", "<leader>ss", ":RemoteSSHFSConnect<CR>")
+map("n", "<leader>sd", ":RemoteSSHFSDisconnect<CR>")
+map("n", "<leader>aa", ":RemoteSSHFSConnect<CR>")
 
 
 
@@ -140,5 +137,4 @@ map("n", "<C-w>", function() require("winbuf").close_buf() end, { silent = true 
 --
 --
 map("n", "<C-r>", "<C-w>w", { silent = true })
-
 
