@@ -1,8 +1,6 @@
 return {
   "nvim-mini/mini.nvim",
-  enabled = function()
-    return vim.fn.argc(-1) == 0
-  end,
+  commit = "3923662bf3d6ca49a9503f8d7196ea0450983e6a",
   event = "VimEnter",
   config = function()
     local starter = require("mini.starter")

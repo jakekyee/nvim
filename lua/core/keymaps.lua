@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- =========================
 -- Telescope (SAFE LAZY LOAD)
@@ -36,9 +37,11 @@ end)
 -- Ctrl key GUI behavior
 -- =========================
 
--- Ctrl + C (copy selection to system clipboard)
-map("n", "<C-c>", '"+yy', opts)
-map("v", "<C-c>", '"+y', opts)
+-- Ctrl + C (copy to system clipboard via OSC52)
+map("n", "<C-c>", "yy", opts)
+map("x", "<C-c>", "y", opts)
+map("s", "<C-c>", "y", opts)
+map("i", "<C-c>", "<Esc>yy", opts)
 
 -- Ctrl + X
 map("n", "<C-x>", '"+dd', opts)
@@ -54,24 +57,24 @@ map("v", "<C-v>", '+p', opts)
 
 map("n", "<C-a>", "ggVG", opts)
 map("i", "<C-a>", "<Esc>ggVG", opts)
-map("v", "<C-a>", "<Esc>ggVG", opts)
+map("x", "<C-a>", "<Esc>ggVG", opts)
 
 
 map("n", "<C-s>", ":w<CR>", opts)
 map("i", "<C-s>", "<Esc>:w<CR>a", opts)
-map("v", "<C-s>", "<Esc>:w<CR>a", opts)
+map("x", "<C-s>", "<Esc>:w<CR>a", opts)
 
 
 
 map("n", "<C-z>", "u", opts)
 map("i", "<C-z>", "<C-g>u<Esc>ui", opts)
-map("v", "<C-z>", "<Esc>u", opts)
+map("x", "<C-z>", "<Esc>u", opts)
 
 
 
 map("n", "<C-y>", "<C-r>", opts)
 map("i", "<C-y>", "<Esc><C-r>i", opts)
-map("v", "<C-y>", "<Esc><C-r>", opts)
+map("x", "<C-y>", "<Esc><C-r>", opts)
 
 
 
@@ -108,11 +111,6 @@ map("n", "<Tab>", ":bnext<CR>")
 map("n", "<S-Tab>", ":bprevious<CR>")
 
 
-map("v", "<C-c>", '"+y')
-map("n", "<C-v>", '"+p')
-map("i", "<C-v>", '<C-r>+')
-map("n", "<C-a>", "ggVG")
-
 map("n", "<leader>ss", ":RemoteSSHFSConnect<CR>")
 map("n", "<leader>sd", ":RemoteSSHFSDisconnect<CR>")
 map("n", "<leader>aa", ":RemoteSSHFSConnect<CR>")
@@ -137,4 +135,3 @@ map("n", "<C-w>", function() require("winbuf").close_buf() end, { silent = true 
 --
 --
 map("n", "<C-r>", "<C-w>w", { silent = true })
-

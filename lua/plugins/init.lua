@@ -9,6 +9,7 @@ return {
   require("plugins.sshfs"),
   require("plugins.fusen"),
   require("plugins.mini"),
+  require("plugins.osc52"),
   require("plugins.winbuf"),
   {
     "tpope/vim-sleuth",
