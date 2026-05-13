@@ -26,7 +26,7 @@ end)
 -- =========================
 -- Terminal
 -- =========================
-map("n", "<leader>tt", ":ToggleTerm<CR>", { silent = true })
+-- map("n", "<leader>tt", ":ToggleTerm<CR>", { silent = true })
 
 -- =========================
 -- SSHFS
