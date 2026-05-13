@@ -9,15 +9,12 @@ return {
     end
 
     -- basic theme setup and apply
-    local ok, tokyonight = pcall(require, "tokyonight")
-    if ok and tokyonight.setup then
-      tokyonight.setup({
-        style = "night",
-        transparent = false,
-        terminal_colors = true,
-      })
-    end
+    require("tokyonight").setup({
+      style = "night",
+      transparent = false,
+      terminal_colors = true,
+    })
 
-    pcall(vim.cmd, "colorscheme tokyonight")
+    vim.cmd.colorscheme("tokyonight")
   end,
 }
