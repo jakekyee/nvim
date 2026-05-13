@@ -11,6 +11,13 @@ map("n", "<leader>fg", function()
   require("telescope.builtin").live_grep()
 end)
 
+
+
+
+
+
+
+
 -- =========================
 -- File explorer
 -- =========================
@@ -31,21 +38,51 @@ map("n", "<leader>ss", ":RemoteSSHFSConnect<CR>", { silent = true })
 -- =========================
 
 -- Ctrl + C (copy selection to system clipboard)
-map("v", "<C-c>", '"+y', { silent = true })
+map("n", "<C-c>", '"+yy', opts)
+map("v", "<C-c>", '"+y', opts)
+
+-- Ctrl + X
+map("n", "<C-x>", '"+dd', opts)
+map("i", "<C-x>", '+x', opts)
+
 
 -- Ctrl + V (paste)
-map("n", "<C-v>", '"+p', { silent = true })
-map("i", "<C-v>", '<C-r>+', { silent = true })
+map("n", "<C-v>", '"+p', opts)
+map("i", "<C-v>", '<C-r>+', opts)
+map("v", "<C-v>", '+p', opts)
 
 -- Ctrl + A (select all)
-map("n", "<C-a>", "ggVG", { silent = true })
+
+map("n", "<C-a>", "ggVG", opts)
+map("i", "<C-a>", "<Esc>ggVG", opts)
+map("v", "<C-a>", "<Esc>ggVG", opts)
+
+
+map("n", "<C-s>", ":w<CR>", opts)
+map("i", "<C-s>", "<Esc>:w<CR>a", opts)
+map("v", "<C-s>", "<Esc>:w<CR>a", opts)
+
+
+
+map("n", "<C-z>", "u", opts)
+map("i", "<C-z>", "<C-g>u<Esc>ui", opts)
+map("v", "<C-z>", "<Esc>u", opts)
+
+
+
+map("n", "<C-y>", "<C-r>", opts)
+map("i", "<C-y>", "<Esc><C-r>i", opts)
+map("v", "<C-y>", "<Esc><C-r>", opts)
+
+
+
 
 
 map("n", "<C-p>", function()
   require("telescope.builtin").find_files()
 end)
 
-map("n", "<C-S-f>", function()
+map("n", "<C-f>", function()
   require("telescope.builtin").live_grep()
 end)
 
@@ -82,3 +119,26 @@ map("n", "<leader>sd", ":SSHFSDisconnect<CR>")
 
 map("n", "<leader>aa", ":SSHFSConnect<CR>")
 map("n", "<leader>sd", ":SSHFSDisconnect<CR>")
+
+
+
+--map("n", "<S-h>", function() require("winbuf").cycle(-1) end, { silent = true })
+map("n", "<leader>tt>", function() require("winbuf").cycle(1) end, { silent = true })
+
+--map("n", "[b", function() require("winbuf").cycle(-1) end, { silent = true })
+--map("n", "]b", function() require("winbuf").cycle(1) end, { silent = true })
+
+
+map("n", "<leader>tl", function() require("winbuf").move_buf("h") end, { silent = true })
+map("n", "<leader>th", function() require("winbuf").move_buf("l") end, { silent = true })
+--map("n", "<A-j>", function() require("winbuf").move_buf("j") end, { silent = true })
+--map("n", "<A-k>", function() require("winbuf").move_buf("k") end, { silent = true })
+
+
+map("n", "<C-w>", function() require("winbuf").close_buf() end, { silent = true })
+--map("n", "<C-S-w>", function() require("winbuf").close_split() end, { silent = true })
+--
+--
+map("n", "<C-r>", "<C-w>w", { silent = true })
+
+

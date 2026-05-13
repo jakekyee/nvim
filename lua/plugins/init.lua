@@ -39,7 +39,13 @@ vim.pack.add({
   -- Mini
   { src = "https://github.com/nvim-mini/mini.nvim" },
 
+  -- Tabby
+  -- { src = "https://github.com/nanozuki/tabby.nvim" },
+  -- nerdfonts
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 
+  { src = "https://github.com/e-sigs/winbuf.nvim"},
+  
 
   
 })
@@ -54,4 +60,6 @@ require("plugins.peek")
 require("plugins.sshfs")
 require("plugins.fusen")
 require("plugins.mini")
+--require("plugins.tabby")
+require("plugins.winbuf")
 require("config.colorscheme")
