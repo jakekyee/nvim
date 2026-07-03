@@ -11,6 +11,7 @@ return {
   require("plugins.mini"),
   require("plugins.osc52"),
   require("plugins.winbuf"),
+  require("plugins.nvim-lspconfig"),
   {
     "tpope/vim-sleuth",
     event = { "BufReadPre", "BufNewFile" },
