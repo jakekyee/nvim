@@ -1,5 +1,8 @@
 return {
   "walkersumida/fusen.nvim",
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+  },
   opts = {
     save_file = vim.fn.stdpath("data") .. "/fusen_marks.json",
     mark = {
@@ -19,6 +22,7 @@ return {
   },
   config = function(_, opts)
     require("fusen").setup(opts)
+    require("telescope").load_extension("fusen")
   end,
   keys = {
     {
@@ -59,7 +63,7 @@ return {
     {
       "<leader>es",
       function()
-        require("fusen").list_marks()
+        require("telescope").extensions.fusen.marks()
       end,
       desc = "List marks",
     },
