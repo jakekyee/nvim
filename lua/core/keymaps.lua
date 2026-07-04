@@ -118,7 +118,7 @@ map("n", "<leader>aa", ":RemoteSSHFSConnect<CR>")
 
 
 --map("n", "<S-h>", function() require("winbuf").cycle(-1) end, { silent = true })
-map("n", "<leader>tt>", function() require("winbuf").cycle(1) end, { silent = true })
+map("n", "<leader>tt", function() require("winbuf").cycle(1) end, { silent = true })
 
 --map("n", "[b", function() require("winbuf").cycle(-1) end, { silent = true })
 --map("n", "]b", function() require("winbuf").cycle(1) end, { silent = true })
